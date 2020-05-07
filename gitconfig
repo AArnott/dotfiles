@@ -1,0 +1,47 @@
+[alias]
+	co = checkout
+	nb = checkout -b # Check out a new branch
+	b = branch # List local branches
+	ci = commit
+	fix = commit --amend --no-edit
+	cp = cherry-pick
+	undo = reset --soft HEAD^
+	st = status
+	f = fetch origin
+	fu = fetch upstream
+	p = push origin -u HEAD
+	pf = push --force-with-lease
+	goback = reset --hard HEAD~1
+	clear = reset --hard
+	where = rev-parse HEAD
+
+	bd = branch -d # Delete a branch (if safe)
+	bdf = branch -D # Force delete a branch
+	alias = config --get-regexp ^alias\\. # List all aliases
+	ec = config --global -e # Open .gitconfig from your home directory
+	git = !exec git # Allow for accidental "git git" (http://caiustheory.com/git-git-git-git-git/)
+
+	# What do I have locally that's not on the server?
+	out=log --branches --not --remotes --simplify-by-decoration --decorate --oneline
+	outk= !exec start gitk --branches --not --remotes
+[core]
+	safecrlf = warn
+	preloadindex = true
+	fscache = true
+	autocrlf = input
+[push]
+	default = simple
+[user]
+	email = andrewarnott@gmail.com
+	name = Andrew Arnott
+	signingkey = FD21E965BEF82456
+[rebase]
+	autoSquash = true
+[rerere]
+	enabled = true
+[fetch]
+	prune = true
+[commit]
+	gpgsign = true
+[pull]
+	rebase = false
