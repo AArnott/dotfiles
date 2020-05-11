@@ -34,7 +34,7 @@
 [user]
 	email = andrewarnott@gmail.com
 	name = Andrew Arnott
-	signingkey = FD21E965BEF82456
+#	signingkey = FD21E965BEF82456
 [rebase]
 	autoSquash = true
 [rerere]
@@ -42,6 +42,6 @@
 [fetch]
 	prune = true
 [commit]
-	gpgsign = true
+#	gpgsign = true
 [pull]
 	rebase = false
