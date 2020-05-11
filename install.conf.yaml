@@ -6,6 +6,9 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.bashrc: bashrc
+    ~/.config/powershell/Microsoft.PowerShell_profile.ps1:
+      create: true
+      path: Microsoft.PowerShell_profile.ps1
 
 - create:
     - ~/git
@@ -38,4 +41,16 @@
     stdin: true
     stdout: true
     description: Install nvm
+    quiet: true
+  -
+    command: |
+      if which pwsh > /dev/null; then
+        pwsh -c "
+          Install-Module posh-git -Scope CurrentUser -Force
+          Install-Module oh-my-posh -Scope CurrentUser -Force
+          Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+        "
+      fi
+    stdout: true
+    description: Install Powerline for PowerShell Core
     quiet: true
